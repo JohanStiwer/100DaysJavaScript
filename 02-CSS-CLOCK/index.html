@@ -68,10 +68,12 @@
     </style>
 
     <script>
-      //Catch the Second QuerySelector 
+      //Catch the Second QuerySelector
       const secondHand = document.querySelector(".second-hand");
-      //Catch the minute Query Selector 
-      const minuteHand = document.querySelector(".min-hand")
+      //Catch the Minute Query Selector
+      const minuteHand = document.querySelector(".min-hand");
+      //Cath the Hour Query Selector
+      const hourHand = document.querySelector(".hour-hand");
       function setDate() {
         //Get Date
         const now = new Date();
@@ -81,12 +83,18 @@
         const secondsDegrees = (seconds / 60) * 90;
         //Making the movement
         secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
-        //Get minutes 
+        //Get minutes
         const minutes = now.getMinutes();
         //Minutes function
         const minutesDegrees = (minutes / 60) * 90;
         //Minute hand
-        minuteHand.style.transform = `rotate(${minutesDegrees}deg)`
+        minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+        //Get hour
+        const hours = now.getHours();
+        //const Hour function
+        const hourDegrees = (hours / 60) * 90;
+        //Making hour movement 
+        minuteHand.style.transform = `rotate(${hourDegrees}deg)`;
       }
 
       setInterval(setDate, 1000);
