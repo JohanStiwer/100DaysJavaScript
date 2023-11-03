@@ -119,7 +119,9 @@
       // tomando los links
       const links = Array.from(category.querySelectorAll("a"));
       //
-      const de = links.map((link) => link.textContent);
+      const de = links
+        .map((link) => link.textContent)
+        .filter((streedName) => streedName.includes("de"));
       // 7. sort Exercise
       // Sort the people alphabetically by last name
 
