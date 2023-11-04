@@ -117,14 +117,19 @@
       //Tomando las cosas del class
       const category = document.querySelector(".mw-category");
       // tomando los links
-      const links = Array.from(category.querySelectorAll("a"));
+      //const links = Array.from(category.querySelectorAll("a"));
       //
-      const de = links
-        .map((link) => link.textContent)
-        .filter((streedName) => streedName.includes("de"));
+      //const de = links
+      //.map((link) => link.textContent)
+      // .filter((streedName) => streedName.includes("de"));
       // 7. sort Exercise
       // Sort the people alphabetically by last name
-
+      const alpha = people.sort((lastOne, nextOne) => {
+        const [aLast, aFirst] = lastOne.split(", ");
+        const [bLast, bFirst] = nextOne.split(", ");
+        return aLast > bLast ? 1 : -1;
+      });
+      // console.log(alpha);
       // 8. Reduce Exercise
       // Sum up the instances of each of these
       const data = [
