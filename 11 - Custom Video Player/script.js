@@ -9,14 +9,22 @@ const ranges = player.querySelectorAll(".player__slider");
 
 /* Build out functions */
 
+//Pause video
 function togglePlay() {
   const method = video.paused ? "play" : "pause";
   video[method]();
 }
 
+//Update button
 function updateButton() {
-    const icon = this.paused ?  '🙈' : '🙊';
-    toggle.textContent = icon;
+  const icon = this.paused ? "🤑" : "😴";
+  toggle.textContent = icon;
+}
+
+//Skip function
+function skip() {
+  console.log(this.dataset.skip);
+  video.currentTime += parseFloat(this.dataset.skip);
 }
 
 /* Hook up the event*/
@@ -26,3 +34,4 @@ video.addEventListener("play", updateButton);
 video.addEventListener("pause", updateButton);
 
 toggle.addEventListener("click", togglePlay);
+skipButtons.forEach((button) => button.addEventListener("click", skip));
