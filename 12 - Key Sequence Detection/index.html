@@ -2,14 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Key Detection</title>
+    <title>Pagina demasiado romantica :v</title>
     <script type="text/javascript" src="./cornify.js"></script>
     <link rel="icon" href="https://fav.farm/🔥" />
   </head>
   <body>
+    <div class="cont"></div>
     <script>
+      //Image xD
+      var img = document.createElement("img");
+      // Establece la ubicación de la imagen
+      img.src =
+        "https://pm1.aminoapps.com/7383/5921aabde3a2fcd1390e3e9cd1c31c70020b8434r1-1080-1200v2_hq.jpg";
+
+      //Konami function
       const pressed = [];
-      const secretCode = "jhojan";
+      const secretCode = "25";
       window.addEventListener("keyup", (e) => {
         //console.log(e.key);
         pressed.push(e.key);
@@ -19,6 +27,10 @@
         );
         if (pressed.join("") === secretCode) {
           console.log("ATR MI PERRO");
+          document.write("I love you danielaaaaaaaaaaaaaaaaa ♥");
+          document.body.style.backgroundColor = "#f1f1f1";
+          // Agrega la imagen al documento
+          document.body.appendChild(img);
         }
 
         // console.log(pressed);
