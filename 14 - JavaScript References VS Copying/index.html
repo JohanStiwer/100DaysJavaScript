@@ -15,13 +15,14 @@
       console.log(age, age2);
       // Let's say we have an array
       const players = ["Wes", "Sarah", "Ryan", "Poppy"];
-
       // and we want to make a copy of it.
-
+      const teams = players;
+      console.log(players, teams);
       // You might think we can just do something like this:
-
+      teams[3] = "lux";
+      console.log(players, teams);
       // however what happens when we update that array?
-
+        
       // now here is the problem!
 
       // oh no - we have edited the original array too!
