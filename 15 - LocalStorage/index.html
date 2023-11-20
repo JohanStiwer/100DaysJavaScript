@@ -84,8 +84,9 @@
           .map((plate, i) => {
             return `
           <li>
-            <label for="">${plate.text}</label>
-        </li>
+            <input type="checkbox" data-index="item${i}" id="item${i}"/>
+            <label for="item${i}">${plate.text}</label>
+          </li>
           `;
           })
           .join("");
