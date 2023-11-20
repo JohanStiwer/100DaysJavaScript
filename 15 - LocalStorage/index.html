@@ -63,14 +63,32 @@
       function addItem(e) {
         //Stop the page from reloading
         e.preventDefault();
-        //Select the id of the label 
-        const text = (this.querySelector("[name=item]")).value;
+        //Select the id of the label
+        const text = this.querySelector("[name=item]").value;
         const item = {
           text,
           done: false,
         };
+        //Add the items in the array
+        items.push(item);
+        //Using the above function
+        populateList(items, itemsList);
         //Reset the form
         this.reset();
+      }
+
+      //Function to the list the items
+
+      function populateList(plates = [], platesList) {
+        platesList.innerHTML = plates
+          .map((plate, i) => {
+            return `
+          <li>
+            <label for="">${plate.text}</label>
+        </li>
+          `;
+          })
+          .join("");
       }
 
       //Listen the names
