@@ -68,10 +68,7 @@
         return bandName.replace(/^(a | the |an)/i, "").trim();
       }
       //Crear una constante para almacenar las bandas
-      const sortedBands = bands.sort((a, b) => {
-        return strip(a) > strip(b) ? 1 : -1; 
-       
-      });
+      const sortedBands = bands.sort((a, b) => (strip(a) > strip(b) ? 1 : -1));
 
       console.log(sortedBands);
     </script>
