@@ -10,7 +10,7 @@
       body {
         margin: 0;
         font-family: sans-serif;
-        background: url("https://source.unsplash.com/nDqA4d5NL0k/2000x2000");
+     /*   background: url("https://source.unsplash.com/nDqA4d5NL0k/2000x2000");*/
         background-size: cover;
         display: flex;
         align-items: center;
@@ -63,13 +63,20 @@
         "An Old Dog",
       ];
 
-      for (i = 0; i < bands.length; i++) {
-        //console.log(bands[i]);
+      //Strip function
+      function strip(bandName) {
+        return bandName.replace(/^(a | the |an)/i, '').trim();
       }
-
-      bands.forEach((band) => {
-        console.log(band);
+      //Crear una constante para almacenar las bandas
+      const sortedBands = bands.sort(function (a, b) {
+        if (a > b) {
+          return 1;
+        } else {
+          return -1;
+        }
       });
+
+      // console.log(sortedBands);
     </script>
   </body>
 </html>
