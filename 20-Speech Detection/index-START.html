@@ -19,11 +19,9 @@
       const words = document.querySelector(".words");
       words.appendChild(p);
 
-      recognition.addEventListener("result", (e) => {
-        console.log(e.result);
+      recognition.addEventListener("results", (e) => {
+        console.log(e);
       });
-
-      recognition.start();
     </script>
 
     <style>
