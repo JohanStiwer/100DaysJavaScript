@@ -96,6 +96,11 @@
       }
       /*Compass: https://thenounproject.com/search/?q=compass&i=592352*/
     </style>
-    <script></script>
+    <script>
+      const arrow = document.querySelector(".arrow");
+      const speed = document.querySelector(".speed-value");
+
+      navigator.geolocation.watchPosition();
+    </script>
   </body>
 </html>
