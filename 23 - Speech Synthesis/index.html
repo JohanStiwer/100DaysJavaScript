@@ -42,7 +42,6 @@
       //Selecting the file of the message
       msg.text = document.querySelector('[name="text"]').value;
 
-      speechSynthesis.addEventListener("voiceschanged", populateVoices);
       //Creating the function for the voices
       function populateVoices() {
         voices = this.getVoices();
@@ -57,6 +56,15 @@
         //inner HTML
         voicesDropdown.innerHTML = voiceOptions;
       }
+
+      //function of set voice
+      function setVoice() {
+        //Set the value of the voice
+        msg.voice = voices.find((voice) => voice.name === this.value);
+      }
+
+      speechSynthesis.addEventListener("voiceschanged", populateVoices);
+      voicesDropdown.addEventListener("change", setVoice);
     </script>
   </body>
 </html>
