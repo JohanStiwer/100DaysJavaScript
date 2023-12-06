@@ -47,6 +47,8 @@
         voices = this.getVoices();
         //Show the voices options
         const voiceOptions = voices
+          //Filter for languages
+          .filter((voice) => voice.lang.includes("en"))
           .map(
             (voice) =>
               `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`
@@ -75,7 +77,6 @@
 
       //Function to set the option
       function setOption() {
-        console.log(this.name, this.value);
         msg[this.name] = this.value;
         toggle();
       }
