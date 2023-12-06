@@ -39,11 +39,11 @@
       );
       const speakButton = document.querySelector("#speak");
       const stopButton = document.querySelector("#stop");
-
+      //Selecting the file of the message
       msg.text = document.querySelector('[name="text"]').value;
 
       speechSynthesis.addEventListener("voiceschanged", populateVoices);
-
+      //Creating the function for the voices
       function populateVoices() {
         voices = this.getVoices();
         //Show the voices options
