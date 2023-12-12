@@ -261,6 +261,22 @@
       }
     </style>
 
-    <script></script>
+    <script>
+      //Selecting the HTML
+      const triggers = document.querySelectorAll(".cool > li");
+      const background = document.querySelector(".dropdownBackground");
+      const nav = document.querySelector(".top");
+      //Creating the functions
+      function handleEnter() {}
+
+      function handleLeave() {}
+      //For each for every function
+      triggers.forEach((trigger) =>
+        trigger.addEventListener("mouseenter", handleEnter)
+      );
+      triggers.forEach((trigger) =>
+        trigger.addEventListener("mouseenter", handleLeave)
+      );
+    </script>
   </body>
 </html>
