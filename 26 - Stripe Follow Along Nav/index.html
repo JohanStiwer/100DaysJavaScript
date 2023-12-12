@@ -274,6 +274,7 @@
       //Creating the functions
       function handleEnter() {
         this.classList.add("trigger-enter");
+        //SetTimeOut function works when the trigger enter
         setTimeout(() => {
           if (ths.classList.contains("trigger-enter")) {
             this.classList.add("trigger-enter-active");
@@ -281,16 +282,21 @@
         }, 150);
         background.classList.add("open");
 
+        //Select the dropdown in html
         const dropdown = this.querySelector(".dropdown");
+        //Select the coords of the dropdown menu
         const dropdownCoords = dropdown.getBoundingClientRect();
+        //Select the navcoord if exist any element before the nav
         const navCoords = nav.getBoundingClientRect();
-
+        //Getting the coors
         const coords = {
           height: dropdownCoords.height,
           width: dropdownCoords.width,
+          //Minus the navCoords if exist
           top: dropdownCoords.top - navCoords.top,
           left: dropdownCoords.left - navCoords.left,
         };
+        //Seting the propertys
         background.style.setProperty("width", `${coords.width}px`);
         background.style.setProperty("height", `${coords.height}px`);
         //top and right
